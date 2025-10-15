@@ -22,7 +22,7 @@ if ($recordar) {
     <head>
     </head>
     <body>
-            <h1>Panel Principal</h1>
+            <h1>Principal </h1>
             <br>
             <h2>Bienvenido Usuario : <?php echo $_POST['usuario']; ?></h2>
             <br>

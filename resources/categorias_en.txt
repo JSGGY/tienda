@@ -1,5 +1,5 @@
-Pants,
-Shirts
+Pants,ASS
+Shirts,
 Tshirts,
 Tracksuits,
 Tights,
@@ -11,4 +11,4 @@ Vests,
 Coats,
 Sweaters,
 Ties,
-Shoes
+Shoes,
