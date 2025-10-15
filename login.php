@@ -4,6 +4,11 @@ $preferenciaIdioma = "es";
 if (isset($_COOKIE['c_recordar']) ) {
     $nombre = $_COOKIE['c_nombre'];
     $clave = $_COOKIE['c_clave'];
+    if (isset($_COOKIE['preferenciaIdioma'])) {
+        $preferenciaIdioma = $_COOKIE['preferenciaIdioma'];
+    }else{
+        $preferenciaIdioma = "es";
+    }
 }
 ?>
 

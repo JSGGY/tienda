@@ -1,19 +1,23 @@
 <?php
-$nombre = $_POST['usuario'];
-$clave = $_POST['clave'];
-$recordar = isset($_POST['recordar']) ? $_POST['recordar'] : false;
-$preferenciaIdioma = "en";
-if ($recordar) {
-    //Setear las cookies
-    setcookie("c_nombre", $nombre, time()+60); 
-    setcookie("c_clave", $clave, time()+60);
-    setcookie("c_recordar", $recordar, time()+60);
-    setcookie("preferenciaIdioma", $preferenciaIdioma, time()+60);
-}else{
-    //Borrar las cookies
-    if (isset($_COOKIE)){    
-        foreach ($_COOKIE as $name => $value) {
+session_start();
+
+// Si vienen datos por POST, guardarlos en sesión
+if (isset($_POST['usuario']) && isset($_POST['clave'])) {
+    $_SESSION['usuario'] = $_POST['usuario'];
+    $_SESSION['clave'] = $_POST['clave'];
+    
+    $recordar = isset($_POST['recordar']) ? $_POST['recordar'] : false;
+    
+    if ($recordar) {
+        setcookie("c_nombre", $_POST['usuario'], time()+60); 
+        setcookie("c_clave", $_POST['clave'], time()+60);
+        setcookie("c_recordar", $recordar, time()+60);
+    } else {
+        // Borrar solo las cookies de usuario
+        if (isset($_COOKIE)){    
+            foreach ($_COOKIE as $name => $value) {
             setcookie($name, "", 1);
+        }
         }
     }
 }
@@ -25,7 +29,9 @@ if ($recordar) {
     <body>
             <h1>Main Panel</h1>
             <br>
-            <h2>Welcome User : <?php echo $_POST['usuario']; ?></h2>
+            <h2>Welcome User : <?php echo $_SESSION['usuario']; ?></h2>
+            <br>
+            <a href="procesar.php?idioma=es">ES(ESPAÑOL) |</a><a href="procesar.php?idioma=en"> EN(ENGLISH) |</a>
             <br>
             <a href="login.php">Logout</a>
             <br>
