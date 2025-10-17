@@ -23,10 +23,9 @@ if (isset($_POST['usuario']) && isset($_POST['clave'])) {
 }
 
 //lectura del .txt
-$archivo = "resources\categorias_en.txt";
+$archivo = "resources\categorias_es.txt";
 if(file_exists($archivo)){
     $categorias_lineas = file($archivo);
-
 }
 ?>
 
