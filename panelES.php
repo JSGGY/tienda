@@ -21,6 +21,13 @@ if (isset($_POST['usuario']) && isset($_POST['clave'])) {
         }
     }
 }
+
+//lectura del .txt
+$archivo = "resources\categorias_en.txt";
+if(file_exists($archivo)){
+    $categorias_lineas = file($archivo);
+
+}
 ?>
 
 <html>
@@ -35,7 +42,13 @@ if (isset($_POST['usuario']) && isset($_POST['clave'])) {
             <br>
             <a href="cerrarsesion.php">Cerrar Sesion</a>
             <br>
-            <h1>Product List</h1>
+            <h1>Lista de Productos</h1>
+            <!-- Aqui sigo yo -->
+             <?php 
+             foreach($categorias_lineas as $lineas){
+                echo "<a href='' >". trim($lineas) ."</a><br>";
+             }?>
+
         </form>
     </body>
 </html>
