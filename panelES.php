@@ -31,9 +31,9 @@ if (isset($_POST['usuario']) && isset($_POST['clave'])) {
             <br>
             <h2>Bienvenido Usuario : <?php echo $_SESSION['usuario']; ?></h2>
             <br>
-            <a href="procesar.php?idioma=es">ES(ESPAÑOL) |</a><a href="procesar.php?idioma=en"> EN(ENGLISH) |</a>
+            <a href="acceso.php?idioma=es">ES(ESPAÑOL) |</a><a href="acceso.php?idioma=en"> EN(ENGLISH) |</a>
             <br>
-            <a href="procesar.php">Cerrar Sesion</a>
+            <a href="cerrarsesion.php">Cerrar Sesion</a>
             <br>
             <h1>Product List</h1>
         </form>

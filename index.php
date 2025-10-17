@@ -11,12 +11,11 @@ if (isset($_COOKIE['c_recordar']) ) {
     }
 }
 ?>
-
 <html>
     <head>
     </head> 
     <body>
-        <form action=<?php  echo isset($_COOKIE['preferenciaIdioma']) && $_COOKIE['preferenciaIdioma'] === 'en'  ? 'panelEN.php' : 'panelES.php'; ?> method="POST">
+        <form action=<?php  echo $preferenciaIdioma === 'en'  ? 'panelEN.php' : 'panelES.php'; ?> method="POST">
             <fieldset>
                 <h1>Login</h1>
                 <br>
@@ -24,9 +23,9 @@ if (isset($_COOKIE['c_recordar']) ) {
                 <input type="text" name="usuario"<?php echo ' value ="' . $nombre . '"' ?> required>
                 <br>
                 Clave
-                <input type="password" name="clave" <?php echo ' value ="' . $nombre . '"' ?> required>
+                <input type="password" name="clave" <?php echo ' value ="' . $clave . '"' ?> required>
                 <br>
-                <input type="checkbox" name="recordar" > Recordar mis datos
+                <input type="checkbox" name="recordar" <?php echo isset($_COOKIE['c_recordar']) ? 'checked' : '' ?>> Recordar mis datos
                  <br>
                 <input type="submit" value="Enviar">
             </fieldset>
