@@ -1,6 +1,13 @@
 <?php
+
 $nombre = $clave = "";
-$preferenciaIdioma = "es";
+$preferenciaIdioma = "";
+
+if (isset($_COOKIE['preferenciaIdioma'])) {
+    $preferenciaIdioma = $_COOKIE['preferenciaIdioma'];
+} else {
+    $preferenciaIdioma = "es";
+}
 if (isset($_COOKIE['c_recordar']) ) {
     $nombre = $_COOKIE['c_nombre'];
     $clave = $_COOKIE['c_clave'];
@@ -10,12 +17,13 @@ if (isset($_COOKIE['c_recordar']) ) {
         $preferenciaIdioma = "es";
     }
 }
+
 ?>
 <html>
     <head>
     </head> 
     <body>
-        <form action=<?php  echo $preferenciaIdioma === 'en'  ? 'panelEN.php' : 'panelES.php'; ?> method="POST">
+        <form action= panel.php method="POST">
             <fieldset>
                 <h1>Login</h1>
                 <br>
