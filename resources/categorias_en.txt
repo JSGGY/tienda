@@ -1,14 +1,14 @@
-Pants,ASS
-Shirts,
-Tshirts,
-Tracksuits,
-Tights,
-Poles,
-Sweatshirts,
-Jackets,
-Fleece linings,
-Vests,
-Coats,
-Sweaters,
-Ties,
-Shoes,
+Pants, Comfortable and versatile bottoms suitable for casual or athletic wear, 10, 25.99
+Shirts, Classic shirts available in formal and casual styles for any occasion, 15, 19.99
+Tshirts, Lightweight and breathable tees perfect for everyday use, 20, 14.99
+Tracksuits, Matching athletic sets designed for training or lounging, 8, 39.99
+Tights, Stretchable leggings providing comfort and full mobility, 25, 12.99
+Poles, Polo shirts with collars for a smart-casual look, 12, 22.50
+Sweatshirts, Soft and warm pullovers ideal for cool weather, 10, 29.99
+Jackets, Outerwear pieces for protection against wind and rain, 7, 49.99
+Fleece linings, Cozy fleece garments offering extra warmth and comfort, 15, 24.99
+Vests, Sleeveless tops or outer layers to complement any outfit, 9, 19.50
+Coats, Long overcoats designed for warmth during cold seasons, 5, 59.99
+Sweaters, Knitted garments that blend style with comfort, 14, 27.99
+Ties, Elegant neckwear suitable for formal or business settings, 20, 9.99
+Shoes, Durable and comfortable footwear for all-day wear, 12, 34.99

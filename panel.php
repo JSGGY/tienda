@@ -62,9 +62,26 @@ if(file_exists($archivo)){
     $categorias_lineas = file($archivo);
 }
 
+foreach($categorias_lineas as $linea){
+    $partes = explode(',', $linea);
+    $partes = array_map('trim', $partes);
+
+    $productos[] = [
+        "nombre" => $partes[0],
+        "descripcion" => $partes[1],
+        "cantidad" => $partes[2],
+        "precio" => $partes[3]
+    ];
+}
+
+//Guardar en sesion los productos leídos del txt
+$_SESSION['productos'] = $productos;
+
 // Obtener el idioma (con español como predeterminado)
 $idioma = isset($_COOKIE['preferenciaIdioma']) ? $_COOKIE['preferenciaIdioma'] : 'es';
 ?>
+
+
 
 <html>
     <head>
@@ -87,9 +104,11 @@ $idioma = isset($_COOKIE['preferenciaIdioma']) ? $_COOKIE['preferenciaIdioma'] :
         <h1><?php echo isset($_COOKIE['preferenciaIdioma']) && $_COOKIE['preferenciaIdioma'] === 'en' ? 'Product List' : 'Lista de Productos'; ?></h1>
         <!-- Aqui sigo yo -->
          <?php 
-         if (isset($categorias_lineas)) {
-             foreach($categorias_lineas as $lineas){
-                echo "<a href='' >". trim($lineas) ."</a><br>";
+         if (isset($productos)) {
+             foreach($productos as $lineas){
+                //$producto = trim($lineas);
+                // Pasamos el producto como parámetro en la URL
+                echo "<a href='producto.php?producto=" . urlencode($lineas["nombre"]) . "'>" . htmlspecialchars($lineas["nombre"]) . "</a><br>";
              }
          }
          ?>
