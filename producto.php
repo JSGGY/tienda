@@ -41,7 +41,9 @@ if(isset($_GET['producto'])){
             <input type="number" id="cantidad" name="cantidad" min="1" max="<?php echo $_SESSION['productoSeleccionado']['cantidad']; ?>" required>
             <button type="submit"><?php echo isset($_COOKIE['preferenciaIdioma']) && $_COOKIE['preferenciaIdioma'] === 'en' ? 'Add to cart' : 'Agregar al carrito'; ?></button>
         </form><br>
-        <img src="<?php echo $_SESSION['productoSeleccionado']['imagen']; ?>" alt="<?php echo $_SESSION['productoSeleccionado']['nombre']; ?>" width="200">
+        <img src="<?php echo $_SESSION['productoSeleccionado']['imagen']; ?>" alt="<?php echo $_SESSION['productoSeleccionado']['nombre']; ?>" width="200"><br><br>
+
+        <a href="carroCompra.php"><button><?php echo isset($_COOKIE['preferenciaIdioma']) && $_COOKIE['preferenciaIdioma'] === 'en' ? 'Go to shopping cart' : 'Ir al carrito de compras'; ?></button></a>
 
     </body>
 
