@@ -1,6 +1,9 @@
 <?php
 session_start();
-
+//Restricción de punto de acceso 
+if(!isset($_SESSION["nombre"])&& !isset($_SESSION["clave"])){
+    header("Location:index.php");
+}
 ?>
 
 <html>

@@ -29,6 +29,10 @@ if (isset($_POST['usuario']) && isset($_POST['clave'])) {
         header("Location: panel.php"); 
     }
 }
+//Restricción de punto de acceso 
+if(!isset($_SESSION["nombre"])&& !isset($_SESSION["clave"])){
+    header("Location:index.php");
+}
 
 //lectura del .txt
 $archivo = "resources\categorias_es.txt";
