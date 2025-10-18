@@ -70,7 +70,9 @@ foreach($categorias_lineas as $linea){
         "nombre" => $partes[0],
         "descripcion" => $partes[1],
         "cantidad" => $partes[2],
-        "precio" => $partes[3]
+        "precio" => $partes[3],
+        "imagen" => $partes[4]
+        
     ];
 }
 
