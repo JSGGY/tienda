@@ -14,7 +14,7 @@ if (isset($_POST['usuario']) && isset($_POST['clave'])) {
         setcookie("c_recordar", $recordar, time()+60);
     } else {
         // Borrar solo las cookies de usuario
-        if (isset($_COOKIE)){    
+        if (isset($_COOKIE)) {
             foreach ($_COOKIE as $name => $value) {
             setcookie($name, "", 1);
         }
