@@ -91,6 +91,6 @@ $carrito = isset($_SESSION['paramatroCarritoenSession']) ? $_SESSION['paramatroC
 
         </form>
 
-        <p><a href="<?php echo $idioma === 'en' ? 'panelEN.php' : 'panelES.php'; ?>"><?php echo $idioma === 'en' ? 'Back to Panel' : 'Volver al Panel'; ?></a></p>
+        <p><a href="panel.php"><?php echo $idioma === 'en' ? 'Back to Panel' : 'Volver al Panel'; ?></a></p>
     </body>
 </html>
