@@ -1,14 +1,14 @@
-Pantalones, Prendas inferiores cómodas y versátiles adecuadas para uso diario o deportivo, 10, 25.99, img\pantalon.jpg
-Camisas, Ropa superior con cuello y botones ideal para ocasiones formales o casuales, 15, 19.99, img\camisa.jpg
-Camisetas, Prendas ligeras y transpirables perfectas para el día a día, 20, 14.99, img\camiseta.jpg
-Chandals, Conjuntos deportivos diseñados para entrenamiento o descanso, 8, 39.99, img\chandals.jpg
-Mallas, Ropa ajustada y elástica que ofrece comodidad y libertad de movimiento, 25, 12.99, img\mallas.jpg
-Polos, Camisetas con cuello y botones combinan estilo casual y elegancia, 12, 22.50, img\polos.jpg
-Sudaderas, Prendas abrigadas y suaves ideales para climas fríos o actividades informales, 10, 29.99, img\sudadera.jpg
-Chaquetas, Ropa exterior para protegerse del viento y la lluvia, 7, 49.99, img\chaqueta.jpg
-Forros polares, Prendas térmicas con tejido suave que brindan calidez adicional, 15, 24.99, img\forrosPolares.jpg
-Chalecos, Prendas sin mangas que complementan el atuendo o aportan abrigo, 9, 19.50, img\chaleco.jpg
-Abrigos, Prendas largas diseñadas para proteger del frío intenso, 5, 59.99, img\abrigos.jpg
-Jerseys, Suéteres tejidos que combinan confort y estilo, 14, 27.99, img\jersey.jpg
-Corbatas, Accesorio formal que aporta elegancia a trajes y camisas, 20, 9.99, img\corbata.jpg
-Zapatos, Calzado cómodo y resistente disponible en diversos estilos y materiales, 12, 34.99, img\zapato.jpg
+1, Pantalones, Prendas inferiores cómodas y versátiles adecuadas para uso diario o deportivo, 10, 25.99, img\pantalon.jpg
+2, Camisas, Ropa superior con cuello y botones ideal para ocasiones formales o casuales, 15, 19.99, img\camisa.jpg
+3, Camisetas, Prendas ligeras y transpirables perfectas para el día a día, 20, 14.99, img\camiseta.jpg
+4, Chandals, Conjuntos deportivos diseñados para entrenamiento o descanso, 8, 39.99, img\chandals.jpg
+5, Mallas, Ropa ajustada y elástica que ofrece comodidad y libertad de movimiento, 25, 12.99, img\mallas.jpg
+6, Polos, Camisetas con cuello y botones combinan estilo casual y elegancia, 12, 22.50, img\polos.jpg
+7, Sudaderas, Prendas abrigadas y suaves ideales para climas fríos o actividades informales, 10, 29.99, img\sudadera.jpg
+8, Chaquetas, Ropa exterior para protegerse del viento y la lluvia, 7, 49.99, img\chaqueta.jpg
+9, Forros polares, Prendas térmicas con tejido suave que brindan calidez adicional, 15, 24.99, img\forrosPolares.jpg
+10, Chalecos, Prendas sin mangas que complementan el atuendo o aportan abrigo, 9, 19.50, img\chaleco.jpg
+11, Abrigos, Prendas largas diseñadas para proteger del frío intenso, 5, 59.99, img\abrigos.jpg
+12, Jerseys, Suéteres tejidos que combinan confort y estilo, 14, 27.99, img\jersey.jpg
+13, Corbatas, Accesorio formal que aporta elegancia a trajes y camisas, 20, 9.99, img\corbata.jpg
+14, Zapatos, Calzado cómodo y resistente disponible en diversos estilos y materiales, 12, 34.99, img\zapato.jpg

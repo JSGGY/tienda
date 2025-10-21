@@ -67,11 +67,12 @@ foreach($categorias_lineas as $linea){
     $partes = array_map('trim', $partes);
 
     $productos[] = [
-        "nombre" => $partes[0],
-        "descripcion" => $partes[1],
-        "cantidad" => $partes[2],
-        "precio" => $partes[3],
-        "imagen" => $partes[4]
+        "id" => $partes[0],
+        "nombre" => $partes[1],
+        "descripcion" => $partes[2],
+        "cantidad" => $partes[3],
+        "precio" => $partes[4],
+        "imagen" => $partes[5]
         
     ];
 }
@@ -96,15 +97,10 @@ $idioma = isset($_COOKIE['preferenciaIdioma']) ? $_COOKIE['preferenciaIdioma'] :
         <br>
         <a href="panel.php?idioma=es">ES(ESPAÑOL) |</a><a href="panel.php?idioma=en"> EN(ENGLISH) |</a>
         <br>
-        <form id="formCerrarSesion" action="cerrarsesion.php" method="POST" style="display:inline;">
-            <input type="hidden" name="usuario" value="<?php echo htmlspecialchars($_SESSION['usuario']); ?>">
-            <input type="hidden" name="clave" value="<?php echo htmlspecialchars($_SESSION['clave']); ?>">
-            <button type="submit" style="background:none;border:none;color:blue;text-decoration:underline;cursor:pointer;">
-            <?php echo isset($_COOKIE['preferenciaIdioma']) && $_COOKIE['preferenciaIdioma'] === 'en' ? 'Logout' : 'Cerrar Sesión'; ?>
-            </button>
-        </form>
+        <p><a href="carroCompra.php"><?php echo isset($_COOKIE['preferenciaIdioma']) && $_COOKIE['preferenciaIdioma'] === 'en' ? 'Shopping Cart' : 'Carrito de Compra'; ?></a></p>
+        <a href="cerrarsesion.php"><?php echo isset($_COOKIE['preferenciaIdioma']) && $_COOKIE['preferenciaIdioma'] === 'en' ? 'Logout' : 'Cerrar Sesión'; ?></a>
         <h1><?php echo isset($_COOKIE['preferenciaIdioma']) && $_COOKIE['preferenciaIdioma'] === 'en' ? 'Product List' : 'Lista de Productos'; ?></h1>
-        <!-- Aqui sigo yo -->
+        
          <?php 
          if (isset($productos)) {
              foreach($productos as $lineas){

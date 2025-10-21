@@ -27,8 +27,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['carrito'] = [];
         }
         
-        // Usar el nombre del producto como clave (coincide con cómo se indexa en cargarProductos)
-        $idProducto = $productoSeleccionado['nombre'];
+        // Usar el ID del producto como clave
+        $idProducto = $productoSeleccionado['id'];
         
         // Agregar o actualizar cantidad en el carrito
         if (isset($_SESSION['carrito'][$idProducto])) {
@@ -52,11 +52,12 @@ function cargarProductos($idioma){
             $partes = explode(',', trim($linea));
             $partes = array_map('trim', $partes); // Limpiar espacios
             
-            if (count($partes) === 5) {
-                // Formato: nombre, descripcion, cantidad, precio, imagen
-                list($nombre, $descripcion, $cantidad, $precio, $imagen) = $partes;
-                // Usar el nombre como clave (ID) porque no hay ID numérico en el archivo
-                $productos[$nombre] = [
+            if (count($partes) === 6) {
+                // Formato: id, nombre, descripcion, cantidad, precio, imagen
+                list($id, $nombre, $descripcion, $cantidad, $precio, $imagen) = $partes;
+                // Usar el ID como clave del array
+                $productos[$id] = [
+                    'id' => $id,
                     'nombre' => $nombre,
                     'descripcion' => $descripcion,
                     'cantidad' => (int)$cantidad,
@@ -100,6 +101,7 @@ $carrito = isset($_SESSION['carrito']) ? $_SESSION['carrito'] : [];
             <table>
                 <tr>
                     <th>ID</th>
+                    <th><?php echo $idioma === 'en' ? 'Product ID' : 'ID Producto';?></th>
                     <th><?php echo $idioma === 'en' ? 'Product' : 'Producto';?></th>
                     <th><?php echo $idioma === 'en' ? 'Quantity' : 'Cantidad';?></th>
                     <th><?php echo $idioma === 'en' ? 'Price' : 'Precio';?></th>
@@ -107,25 +109,30 @@ $carrito = isset($_SESSION['carrito']) ? $_SESSION['carrito'] : [];
                 </tr>
                 <?php
                 $total = 0;
-                foreach ($carrito as $nombreProducto => $cantidad):
-                    if(!isset($productos[$nombreProducto])) continue;
+                $contador = 1;  // Contador incremental para el ID de la tabla
+                foreach ($carrito as $idProducto => $cantidad):
+                    if(!isset($productos[$idProducto])) continue;
 
-                    $producto = $productos[$nombreProducto];
+                    $producto = $productos[$idProducto];
                     $precio = $producto['precio'];
                     $nombre = $producto['nombre'];
                     $subtotal = $precio * $cantidad;
                     $total += $subtotal;
                 ?>
                 <tr>
-                    <td><?php echo $nombreProducto; ?></td>
+                    <td><?php echo $contador; ?></td>
+                    <td><?php echo $idProducto; ?></td>
                     <td><?php echo $nombre; ?></td>
                     <td><?php echo $cantidad; ?></td>
                     <td>$<?php echo number_format($precio, 2); ?></td>
                     <td>$<?php echo number_format($subtotal, 2); ?></td>
                 </tr>
-                <?php endforeach; ?>
+                <?php 
+                    $contador++;  // Incrementar el contador
+                endforeach; 
+                ?>
                 <tr>
-                    <td colspan="4"><strong><?php echo $idioma === 'en' ? 'Total' : 'Total'; ?></strong></td>
+                    <td colspan="5"><strong><?php echo $idioma === 'en' ? 'Total' : 'Total'; ?></strong></td>
                     <td><strong>$<?php echo number_format($total, 2); ?></strong></td>
                 </tr>
             </table>
@@ -138,5 +145,6 @@ $carrito = isset($_SESSION['carrito']) ? $_SESSION['carrito'] : [];
         <?php endif; ?>
 
         <p><a href="panel.php"><?php echo $idioma === 'en' ? 'Back to Panel' : 'Volver al Panel'; ?></a></p>
+        <p><a href="cerrarsesion.php"><?php echo $idioma === 'en' ? 'Logout' : 'Cerrar Sesión'; ?></a></p>
     </body>
 </html>
